@@ -3,25 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Saddonti</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Spider-Man Love</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: #1a1a2e;
+        }
+
+        /* Login Page */
+        .login-bg {
+            background: url('spiderman-bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: rgba(255, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 80%;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Album Page */
+        .album-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .album-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .album-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Love Letter Page */
+        .letter-container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+            margin-top: 30px;
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .next-button:hover {
+            background-color: #d7a6b7;
+        }
+    </style>
 </head>
 <body>
-    <div id="message">
-        <h1>To My Princess</h1>
-        <p>
-            Saddonti, I Love You, Today is a special day.<br>
-            Today is the day where my love is birthed, Today is the day when God wrote that our destinies are for each other, Today is 22/2/2025.<br><br>
-
-            Let's go back to Sunday 22/02/2009 when you were born. The moon was like this since he was shy to be brighter when you were born, he let you shine.<br>
-            And now let me talk about what you make in my life: You are my moon.<br>
-            When you entered my life, you brightened it. You make me laugh when I start thinking of you. I can't imagine a day to come when you are not with me.<br>
-            I Love you very much, My Moon ❤️❤️🌑<br><br>
-
-            Baby, You're not just beautiful. You're everything. Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home. I could stare at you forever and still not have enough of you. You're my definition of perfect.<br><br>
-
-            Every moment with you is a memory I hold close. This is a small reflection of the love we share in our journey.
-        </p>
+    <div id="loginPage" class="login-bg">
+        <div class="login-container">
+            <h2>Enter Password</h2>
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="checkPassword()">Login</button>
+            <p id="error-message"></p>
+        </div>
     </div>
+
+    <div id="albumPage" style="display:none;">
+        <header>
+            <h1>Our Memories</h1>
+            <a href="#loveLetterPage" class="next-button">Read My Letter →</a>
+        </header>
+        <div class="album-container">
+            <img src="image1.jpg" alt="Memory 1">
+            <img src="image2.jpg" alt="Memory 2">
+            <img src="image3.jpg" alt="Memory 3">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <div id="loveLetterPage" style="display:none;">
+        <header>
+            <h1>My Love for You</h1>
+        </header>
+        <div class="letter-container">
+            <p>
+                To My Princess, Saddonti, I Love You. Today is a special day.<br><br>
+                Today is the day where my love is birthed, Today is the day when God wrote that our destinies are for each other, Today is 22/2/2025.<br><br>
+                Let's go back for Sunday 22/02/2009 When you were born. The moon was like this since he was shy to be brightened more when you were born, he let you to shine, and now let me talk about what you mean in my life: You are my moon.<br><br>
+                When you entered my life, You brightened it, You make me laugh when I start thinking of you, I can't imagine a day to come when you are not with me, I Love you very much My moon❤️❤️🌑<br><br>
+                Saddonti 9/5/2024: Kenet awal mara mnehki fiha, w ken men ahla el ayyem hal youm hayda khalena nseer ref2a w rje3na serna besties w rje3na lovers w hala2 aktar men lovers, nehna serna rooh wahde w ba3den ha nseer (زوج & زوجة).<br><br>
+                Bi hal youm hayda, ane hasset bi shi ma hassyto bi 3omre kello. Hasset eno fih shi ha yseer ma3 eno kenet ktir mestab3ed el fekra hayde kermel eno mb3rf bas ma kenet etwaka3 momken thebini khasa eno kente ba3dik tal3a men shi w ma kente mest3ede terja3e tfooti bi nafa el shi mara tenye w terja3e lal 0 bas ane asbatelik eno ma ha raj3ik lal 0, ha khaliki tetla3e lal 100 la2ano mane toxic,mane player,mane wesekh, w mhafez 3layke la2ano bhebik 3njd.9/5/2024 ken nhar helo la2ano hasset el ot3a el na2sa men albe la2yta ma3ik hata law ma ente kente thebini.<br><br>
+                Bas ente bta3rfe eno kenet mcursh 3layke men zamen 🙂‍↔️😝❤️. Fa ma ha dayy3ik men eede w tmasaket fiki w rahanet 3layke eno ha tseere habeebte w serte 😝 ente ha tdalle el sham3a el mdawey bi hayete,w noor 3yoone, w albe w da2ato, ente khalyteene heb el hayet, ente khalyteene 3eesh w onboset eni 3ayesh, ente elli raja3teele el amal la hayete. Bhebik ktiiiir ya noor 3yoone ❤️❤️ w nchalla mndal ma3 ba3ed lal ekher w mntjwz ba3ed w btseere marte w em wlede ya em mhamad ya rooh albe ❤️🫂<br><br>
+                Allah ykhalili eyeke baby ❤️❤️. Allah ma yehrmne menik ya 3yoone ❤️❤️. Allah yehfazle eyeke ya sham3et hayete ❤️❤️.<br><br>
+                Baby, You're not just beautiful. You're everything. Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home. I could stare at you forever and still not have enough for you. You're my definition of perfect.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "yourpassword") {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("albumPage").style.display = "block";
+            } else {
+                document.getElementById("error-message").textContent = "Incorrect password!";
+            }
+        }
+    </script>
 </body>
 </html>
