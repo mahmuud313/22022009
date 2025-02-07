@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Set your desired numeric password to "112025"
+  // Set the correct numeric password to "112025"
   const correctPassword = "112025";
   let enteredPassword = "";
   const passwordDisplay = document.getElementById("passwordDisplay");
@@ -41,19 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
   window.startCountdown = function () {
     // Set the target date and time (July 19, 2024 22:50:00)
     var countDownDate = new Date("July 19, 2024 22:50:00").getTime();
-    
+
     var countdownInterval = setInterval(function () {
       var now = new Date().getTime();
       var distance = countDownDate - now;
-      
+
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
+
       document.getElementById("timer").innerHTML =
         days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      
+
       if (distance < 0) {
         clearInterval(countdownInterval);
         document.getElementById("timer").innerHTML = "EXPIRED";
