@@ -1,148 +1,119 @@
-/* Global Styles */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-.page {
-  display: none;
-}
-
-/* LOGIN PAGE STYLES */
+/* Login Page Styling */
 #loginPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('login_background_image.jpg') no-repeat center center/cover;
 }
 
-.login-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  background: #fff;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+#passwordInput {
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
 }
 
-.login-message {
-  max-width: 300px;
-  font-size: 18px;
-  line-height: 1.4;
+#loginButton {
+    padding: 10px 20px;
+    background-color: #007bff; /* Spiderman blue */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
 }
 
-/* Numeric Keypad */
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 60px);
-  gap: 10px;
+#loginButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-.keypad button {
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  background: #3498db;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
+#message {
+    font-size: 18px;
+    color: #0066cc; /* Spiderman blue */
+    margin-top: 20px;
 }
 
-#passwordDisplay {
-  margin-top: 20px;
-  font-size: 24px;
-  letter-spacing: 8px;
-  padding: 10px;
-  background: #eee;
-  width: 200px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-/* TIMER PAGE STYLES */
+/* Timer Page Styling (Red color scheme) */
 #timerPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #eaeaea;
-  text-align: center;
-  padding: 20px;
+    display: none;
+    background-color: red;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#timerPage h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+#timeIndicator {
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
-#timer {
-  font-size: 32px;
-  margin: 20px;
+/* Photo Pages Styling (Blue color scheme) */
+#photoPage {
+    display: none;
+    background-color: #0056b3; /* Spiderman blue */
+    color: white;
+    padding: 50px;
+    height: 100vh;
+    text-align: center;
 }
 
-#timerPage p {
-  font-size: 24px;
-  margin: 10px;
+#photoPage img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin-bottom: 20px;
 }
 
-.nav-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #3498db;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
+/* Message Page Styling (Pink color scheme) */
+#messagePage {
+    display: none;
+    background-color: pink;
+    color: white;
+    padding: 50px;
+    height: 100vh;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6;
+    border-radius: 10px;
 }
 
-/* MEDIA PAGE STYLES */
-#mediaPage {
-  padding: 20px;
-  background: #eaeaea;
-  min-height: 100vh;
-  text-align: center;
+/* General Styling for All Pages */
+h1, h2, h3, p {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #fff;
 }
 
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
+/* Text Adjustments */
+#messagePage p {
+    font-size: 18px;
+    color: #ff66b3; /* Pink color for the message */
 }
 
-.media-grid img,
-.media-grid video {
-  width: 100%;
-  border-radius: 5px;
-}
-
-/* LETTER PAGE STYLES */
-#letterPage {
-  padding: 20px;
-  background: #fff;
-  min-height: 100vh;
-  text-align: center;
-}
-
-.letter-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: left;
+#messagePage .message {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
 }
