@@ -1,67 +1,63 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    background-color: #000;
     color: white;
-    background: #1a1a2e;
 }
 
-/* Login Page */
-.login-bg {
-    background: url('spiderman-bg.jpg') no-repeat center center/cover;
-    height: 100vh;
+/* Hide pages by default */
+.hidden {
+    display: none;
+}
+
+/* ❤️ LOGIN PAGE */
+#login-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-image {
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 .login-container {
-    background: rgba(255, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
 }
 
-input, button {
-    margin-top: 10px;
+input {
     padding: 10px;
+    margin: 10px;
     width: 80%;
+    border: none;
+    border-radius: 5px;
 }
 
 button {
-    background: blue;
+    padding: 10px;
+    background-color: red;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-/* Album Page */
-.album-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-}
-
-.album-container img {
-    width: 150px;
-    height: 150px;
+/* ❤️ ALBUM & MESSAGE PAGE */
+.album img {
+    width: 90%;
+    max-width: 500px;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    margin: 20px 0;
 }
 
-.album-container img:hover {
-    transform: scale(1.1);
-}
-
-/* Love Letter Page */
-.letter-container {
-    width: 60%;
+.message {
+    width: 80%;
     margin: auto;
-    padding: 20px;
-    background: rgba(0, 0, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+    text-align: left;
 }
