@@ -1,63 +1,124 @@
+/* styles.css */
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #000;
-    color: white;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Hide pages by default */
-.hidden {
-    display: none;
+.page {
+  display: none;
 }
 
-/* ❤️ LOGIN PAGE */
-#login-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+/* Show the login page first */
+#loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
 }
 
-.login-image {
-    width: 300px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-}
-
+/* Login Container with Keypad and Message */
 .login-container {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-input {
-    padding: 10px;
-    margin: 10px;
-    width: 80%;
-    border: none;
-    border-radius: 5px;
+.login-message {
+  max-width: 300px;
+  font-size: 18px;
+  line-height: 1.4;
 }
 
-button {
-    padding: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Numeric Keypad */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 10px;
 }
 
-/* ❤️ ALBUM & MESSAGE PAGE */
-.album img {
-    width: 90%;
-    max-width: 500px;
-    border-radius: 10px;
-    margin: 20px 0;
+.keypad button {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.message {
-    width: 80%;
-    margin: auto;
-    text-align: left;
+#passwordDisplay {
+  margin-top: 20px;
+  font-size: 24px;
+  letter-spacing: 8px;
+  padding: 10px;
+  background: #eee;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Media Page Styles */
+#mediaPage {
+  padding: 20px;
+  background: #eaeaea;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.media-grid img,
+.media-grid video {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.nav-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Letter Page Styles */
+#letterPage {
+  padding: 20px;
+  background: #fff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.letter-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
 }
