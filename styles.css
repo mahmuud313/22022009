@@ -13,14 +13,15 @@ body {
     overflow-x: hidden;
 }
 
-/* Login Page Styling */
+/* Login Page Styling (Blue color) */
 #loginPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('login_background_image.jpg') no-repeat center center/cover;
+    background-color: #007bff; /* Blue color for Spiderman theme */
+    color: white;
 }
 
 #passwordInput {
@@ -28,13 +29,13 @@ body {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
-    border: 2px solid #333;
+    border: 2px solid #fff;
     border-radius: 5px;
 }
 
 #loginButton {
     padding: 10px 20px;
-    background-color: #007bff; /* Spiderman blue */
+    background-color: #0056b3;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -43,12 +44,12 @@ body {
 }
 
 #loginButton:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #003d73; /* Darker blue on hover */
 }
 
 #message {
     font-size: 18px;
-    color: #0066cc; /* Spiderman blue */
+    color: #ffcc00; /* Spiderman yellow */
     margin-top: 20px;
 }
 
@@ -69,10 +70,15 @@ body {
     margin-bottom: 20px;
 }
 
-/* Photo Pages Styling (Blue color scheme) */
+#timerPage p {
+    font-size: 18px;
+    color: white;
+}
+
+/* Photo Pages Styling */
 #photoPage {
     display: none;
-    background-color: #0056b3; /* Spiderman blue */
+    background-color: #0056b3; /* Blue */
     color: white;
     padding: 50px;
     height: 100vh;
@@ -86,34 +92,35 @@ body {
     margin-bottom: 20px;
 }
 
-/* Message Page Styling (Pink color scheme) */
+#photoPage video {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+/* Message Page Styling (Letter style) */
 #messagePage {
     display: none;
-    background-color: pink;
-    color: white;
+    background-color: #f7f7f7; /* Light background to look like paper */
+    color: black;
     padding: 50px;
     height: 100vh;
     text-align: center;
     font-size: 20px;
     line-height: 1.6;
     border-radius: 10px;
-}
-
-/* General Styling for All Pages */
-h1, h2, h3, p {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    color: #fff;
+    font-family: 'Courier New', Courier, monospace; /* Vintage font */
+    background-image: url('paper_texture.jpg'); /* Optional paper texture image */
 }
 
 /* Text Adjustments */
 #messagePage p {
     font-size: 18px;
-    color: #ff66b3; /* Pink color for the message */
+    color: #5d4037; /* Brownish color for vintage feel */
 }
 
-#messagePage .message {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
+.letterText {
+    font-size: 24px;
+    color: #5d4037; /* Dark brown for vintage letter */
+    line-height: 1.8;
+    font-family: 'Courier New', Courier, monospace;
 }
