@@ -1,63 +1,44 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Set the correct numeric password to "112025"
-  const correctPassword = "112025";
-  let enteredPassword = "";
-  const passwordDisplay = document.getElementById("passwordDisplay");
+// Password Authentication
+const password = "112025";
+const loginButton = document.getElementById("loginButton");
+const passwordInput = document.getElementById("passwordInput");
+const loginPage = document.getElementById("loginPage");
+const timerPage = document.getElementById("timerPage");
+const photoPage = document.getElementById("photoPage");
+const messagePage = document.getElementById("messagePage");
 
-  // Functions accessible from inline onclick attributes
-  window.appendNumber = function (num) {
-    enteredPassword += num;
-    passwordDisplay.textContent = enteredPassword;
-  };
-
-  window.clearPassword = function () {
-    enteredPassword = "";
-    passwordDisplay.textContent = "";
-  };
-
-  window.checkPassword = function () {
-    if (enteredPassword === correctPassword) {
-      // Hide login page and show timer page
-      document.getElementById("loginPage").style.display = "none";
-      document.getElementById("timerPage").style.display = "flex";
-      startCountdown();
+loginButton.addEventListener("click", function() {
+    if (passwordInput.value === password) {
+        loginPage.style.display = "none";
+        timerPage.style.display = "flex";  // Show Timer Page
+        startTimer();  // Start Timer
     } else {
-      alert("Incorrect password!");
-      clearPassword();
+        alert("Incorrect Password!");
     }
-  };
-
-  window.goToMediaPage = function () {
-    document.getElementById("timerPage").style.display = "none";
-    document.getElementById("mediaPage").style.display = "block";
-  };
-
-  window.goToLetterPage = function () {
-    document.getElementById("mediaPage").style.display = "none";
-    document.getElementById("letterPage").style.display = "block";
-  };
-
-  // Countdown timer function
-  window.startCountdown = function () {
-    // Set the target date and time (July 19, 2024 22:50:00)
-    var countDownDate = new Date("July 19, 2024 22:50:00").getTime();
-
-    var countdownInterval = setInterval(function () {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("timer").innerHTML =
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-      if (distance < 0) {
-        clearInterval(countdownInterval);
-        document.getElementById("timer").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-  };
 });
+
+// Timer Logic
+function startTimer() {
+    const targetDate = new Date("July 19, 2024 22:50:00").getTime();
+    const timerInterval = setInterval(function() {
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById("timeIndicator").innerHTML = "The time has arrived!";
+        } else {
+            let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            document.getElementById("timeIndicator").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        }
+    }, 1000);
+}
+
+// Navigate to Photo Page after Timer
+setTimeout(() => {
+    timerPage.style.display = "none";
+    photoPage.style.display = "block";
+}, 10000); // After 10 seconds, move to photo page (for testing)
