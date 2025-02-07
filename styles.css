@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Global Styles */
 body {
   margin: 0;
@@ -11,7 +9,7 @@ body {
   display: none;
 }
 
-/* Show the login page first */
+/* LOGIN PAGE STYLES */
 #loginPage {
   display: flex;
   flex-direction: column;
@@ -21,7 +19,6 @@ body {
   background: #f0f0f0;
 }
 
-/* Login Container with Keypad and Message */
 .login-container {
   display: flex;
   align-items: center;
@@ -30,7 +27,7 @@ body {
   padding: 20px;
   border: 2px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .login-message {
@@ -68,7 +65,45 @@ body {
   border-radius: 5px;
 }
 
-/* Media Page Styles */
+/* TIMER PAGE STYLES */
+#timerPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #eaeaea;
+  text-align: center;
+  padding: 20px;
+}
+
+#timerPage h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#timer {
+  font-size: 32px;
+  margin: 20px;
+}
+
+#timerPage p {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.nav-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* MEDIA PAGE STYLES */
 #mediaPage {
   padding: 20px;
   background: #eaeaea;
@@ -91,18 +126,7 @@ body {
   border-radius: 5px;
 }
 
-.nav-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #3498db;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* Letter Page Styles */
+/* LETTER PAGE STYLES */
 #letterPage {
   padding: 20px;
   background: #fff;
@@ -117,7 +141,7 @@ body {
   background: #f9f9f9;
   border: 2px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   font-size: 18px;
   line-height: 1.6;
   text-align: left;
