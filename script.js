@@ -1,51 +1,50 @@
-document.addEventListener("DOMContentLoaded", function () {
-    showPage("login-page");
-    updateTimer();
-});
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+pages[currentPage].style.display = "flex";
 
-const correctPassword = "112025";
 let enteredPassword = "";
+const correctPassword = "112025";
 
-function enterDigit(digit) {
+function enterNumber(num) {
     if (enteredPassword.length < 6) {
-        enteredPassword += digit;
-        document.getElementById("passwordInput").value = "*".repeat(enteredPassword.length);
+        enteredPassword += num;
+        document.getElementById("password").value = enteredPassword;
     }
 }
 
 function clearPassword() {
     enteredPassword = "";
-    document.getElementById("passwordInput").value = "";
+    document.getElementById("password").value = "";
 }
 
 function checkPassword() {
     if (enteredPassword === correctPassword) {
-        showPage("timer-page");
+        nextPage();
     } else {
-        alert("Wrong password! Try again.");
+        alert("Wrong Password!");
         clearPassword();
     }
 }
 
-function showPage(pageId) {
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
-    document.getElementById(pageId).style.display = "flex";
+function nextPage() {
+    pages[currentPage].style.display = "none";
+    currentPage++;
+    if (currentPage < pages.length) {
+        pages[currentPage].style.display = "flex";
+    }
 }
 
-function nextPage(pageId) {
-    showPage(pageId);
-}
+const startDate = new Date("July 19, 2024 22:50:00").getTime();
 
 function updateTimer() {
-    const startDate = new Date("July 19, 2024 22:50:00").getTime();
     const now = new Date().getTime();
-    const elapsed = now - startDate;
+    const elapsedTime = now - startDate;
 
-    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+    const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    document.getElementById("time-counter").textContent = `${days} Days, ${hours} Hours, ${minutes} Minutes`;
+    document.getElementById("time-counter").innerHTML = `${days} Days, ${hours} Hours`;
 }
+
+setInterval(updateTimer, 1000);
+updateTimer();
