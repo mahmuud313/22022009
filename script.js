@@ -1,50 +1,39 @@
-let currentPage = 0;
-const pages = document.querySelectorAll('.page');
-pages[currentPage].style.display = "flex";
+let passwordInput = "";
+let correctPassword = "112025";
 
-let enteredPassword = "";
-const correctPassword = "112025";
-
-function enterNumber(num) {
-    if (enteredPassword.length < 6) {
-        enteredPassword += num;
-        document.getElementById("password").value = enteredPassword;
-    }
+function addToPassword(num) {
+    passwordInput += num;
+    document.getElementById('password').value = passwordInput;
 }
 
-function clearPassword() {
-    enteredPassword = "";
-    document.getElementById("password").value = "";
-}
-
-function checkPassword() {
-    if (enteredPassword === correctPassword) {
-        nextPage();
+function submitPassword() {
+    if (passwordInput === correctPassword) {
+        document.getElementById('login-page').style.display = 'none';
+        document.getElementById('timer-page').style.display = 'block';
+        startTimer();
     } else {
-        alert("Wrong Password!");
-        clearPassword();
+        alert("Incorrect password. Try again.");
     }
 }
 
-function nextPage() {
-    pages[currentPage].style.display = "none";
-    currentPage++;
-    if (currentPage < pages.length) {
-        pages[currentPage].style.display = "flex";
-    }
+function startTimer() {
+    const startDate = new Date("July 19, 2024 22:50:00").getTime();
+    let timerInterval = setInterval(() => {
+        let now = new Date().getTime();
+        let timeDiff = now - startDate;
+        if (timeDiff >= 0) {
+            let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+        }
+    }, 1000);
 }
 
-const startDate = new Date("July 19, 2024 22:50:00").getTime();
-
-function updateTimer() {
-    const now = new Date().getTime();
-    const elapsedTime = now - startDate;
-
-    const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-    document.getElementById("time-counter").innerHTML = `${days} Days, ${hours} Hours`;
+function showLetter() {
+    document.getElementById('album-page').style.display = 'none';
+    document.getElementById('letter-page').style.display = 'block';
 }
-
-setInterval(updateTimer, 1000);
-updateTimer();
