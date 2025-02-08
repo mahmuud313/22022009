@@ -1,48 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const password = "220225"; // Set your password here
-    let input = "";
+const correctPassword = "1972024";
+let enteredPassword = "";
 
-    const display = document.getElementById("password-display");
-    const buttons = document.querySelectorAll(".keypad button");
-    const contentContainer = document.getElementById("content-container");
-    const loginContainer = document.getElementById("login-container");
+function pressKey(number) {
+    enteredPassword += number;
+    document.getElementById("passwordDisplay").textContent = enteredPassword;
+}
 
-    buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-            let value = this.getAttribute("data-value");
+function clearPassword() {
+    enteredPassword = "";
+    document.getElementById("passwordDisplay").textContent = enteredPassword;
+}
 
-            if (value === "clear") {
-                input = "";
-            } else if (value === "enter") {
-                if (input === password) {
-                    contentContainer.classList.remove("hidden");
-                    loginContainer.style.display = "none";
-                } else {
-                    alert("Wrong Password!");
-                    input = "";
-                }
-            } else {
-                input += value;
-            }
-
-            display.value = input;
-        });
-    });
-
-    // Countdown Timer
-    function updateCountdown() {
-        const startDate = new Date("2024-07-19T22:50:00");
-        const now = new Date();
-        const diff = now - startDate;
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        document.getElementById("countdown").innerText =
-            `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+function submitPassword() {
+    if (enteredPassword === correctPassword) {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("contentPage").style.display = "block";
+        startCountdown();
+    } else {
+        alert("Incorrect password, please try again.");
     }
+}
 
-    setInterval(updateCountdown, 1000);
-});
+function startCountdown() {
+    const countdownDate = new Date("2025-02-22T00:00:00").getTime();
+    const countdownDisplay = document.getElementById("countdownDisplay");
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const timeLeft = countdownDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        countdownDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+}
