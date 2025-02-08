@@ -1,116 +1,47 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #222;
-    color: white;
     text-align: center;
+    background-color: #121212;
+    color: white;
 }
 
-/* Login Page */
-.login-container {
-    background-color: #333;
-    width: 320px;
+.countdown-container, .album, .love-letter, .login-container {
+    margin: 20px auto;
     padding: 20px;
-    margin: 50px auto;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    text-align: center;
 }
 
-#password-display {
-    width: 90%;
-    padding: 10px;
-    font-size: 20px;
-    text-align: center;
-    border: none;
-    background: #555;
-    color: white;
-    border-radius: 5px;
+.album img, .album video {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    max-width: 320px;
 }
 
 .keypad {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin: 20px auto;
-    width: 220px;
 }
 
 .keypad button {
-    width: 60px;
-    height: 60px;
     font-size: 20px;
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.keypad button:active {
-    background-color: #ddd;
-}
-
-#clear, #enter {
-    background-color: red;
-    color: white;
-}
-
-#enter {
-    background-color: green;
-}
-
-/* Countdown Timer */
-.countdown-container {
-    background-color: pink;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 18px;
-}
-
-/* Album Section */
-.album {
-    background-color: purple;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.album img, .album video {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-/* Love Letter */
-.love-letter {
-    background-color: purple;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 18px;
-    text-align: left;
     padding: 15px;
-}
-
-/* Next Button */
-.next-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #ff69b4;
     border: none;
+    background: #444;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.next-button:hover {
-    background-color: #ff1493;
-}
-
-/* Hide Content Initially */
-#content-container {
-    display: none;
+.keypad button:hover {
+    background: #666;
 }
