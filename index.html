@@ -3,93 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Saddonti</title>
+    <title>For My Love</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
-<body class="login">
+<body>
 
     <!-- Login Page -->
-    <div id="loginPage" class="page">
-        <h1>Enter Password</h1>
+    <div id="login-container" class="login-container">
+        <h2>Enter the Password</h2>
+        <input type="text" id="password-display" readonly>
         <div class="keypad">
-            <input type="password" id="password" readonly>
-            <button onclick="addNumber(1)">1</button>
-            <button onclick="addNumber(2)">2</button>
-            <button onclick="addNumber(3)">3</button>
-            <button onclick="addNumber(4)">4</button>
-            <button onclick="addNumber(5)">5</button>
-            <button onclick="addNumber(6)">6</button>
-            <button onclick="addNumber(7)">7</button>
-            <button onclick="addNumber(8)">8</button>
-            <button onclick="addNumber(9)">9</button>
-            <button onclick="clearInput()">C</button>
-            <button onclick="addNumber(0)">0</button>
-            <button onclick="checkPassword()">OK</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="clear" id="clear">C</button>
+            <button data-value="0">0</button>
+            <button data-value="enter" id="enter">✔</button>
         </div>
     </div>
 
-    <!-- Album Page -->
-    <div id="albumPage" class="page hidden">
-        <h1>Our Memories</h1>
-        <img src="photo1.jpg" alt="Memory 1">
-        <img src="photo2.jpg" alt="Memory 2">
-        <img src="photo3.jpg" alt="Memory 3">
-        <button onclick="showPage('countdownPage', 'countdown')">Next</button>
-    </div>
+    <!-- Main Content (Hidden Until Login) -->
+    <div id="content-container" style="display: none;">
 
-    <!-- Countdown Page -->
-    <div id="countdownPage" class="page hidden">
-        <h1>Time Since We Met</h1>
-        <div id="timer"></div>
-        <button onclick="showPage('letterPage', 'letter')">Next</button>
-    </div>
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+            <h2>Time Since Our Special Date</h2>
+            <p id="countdown">Loading...</p>
+        </div>
 
-    <!-- Love Letter Page -->
-    <div id="letterPage" class="page hidden">
-        <h1>To My Princess</h1>
-        <div class="container">
+        <!-- Album Section -->
+        <div id="album-container" class="album">
+            <h2>Our Memories</h2>
+            <img src="20250130_211148.jpg" alt="Memory 1">
+            <img src="GridArt_20250130_205329683.jpg" alt="Memory 2">
+            <img src="GridArt_20250130_212010513.jpg" alt="Memory 3">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="next-button" class="next-button">Next</button>
+        </div>
+
+        <!-- Love Letter Section -->
+        <div id="letter-container" class="love-letter" style="display: none;">
+            <h2>To My Princess</h2>
             <p>
-                Saddonti, I Love You, Today is a special day.
-                Today is the day where my love is birthed, Today is the day when God wrote that our destinies are for each other.
-                Today is 22/2/2025. Let's go back to Sunday 22/02/2009 when you were born. 
-                The moon was like this since he was shy to be brighter when you were born, he let you shine, and now let me talk about what you bring to my life:
-            </p>
-            <p>
-                You are my moon. When you entered my life, you brightened it. 
-                You make me laugh when I start thinking of you. I can't imagine a day without you. 
-                I Love you very much, My Moon. ❤️❤️🌑
-            </p>
-            <p>
-                Saddonti, 9/5/2024 was the first time we talked, and it was one of the most beautiful days. That day made us friends, then best friends, then lovers, and now more than lovers—we are one soul. 
-                And soon, we will become (زوج & زوجة). 
-                That day, I felt something I had never felt before. I sensed that something was going to happen, even though I never expected you would love me back, 
-                especially because you had just come out of something and were not ready to go through it again. But I proved to you that I would never take you back to zero, I will take you to 100. 
-                Because I am not toxic, not a player, not dirty—I am keeping you safe because I truly love you.
-            </p>
-            <p>
-                9/5/2024 was a beautiful day because I felt the missing piece of my heart was with you, even though you didn't love me yet. 
-                But you knew I had a crush on you for a long time 🙂‍↔️😝❤️. 
-                So I held on to you and bet that one day, you would become my beloved—and you did. 😝 
-                You will always be the candle that lights my life, the light of my eyes, my heart, and its beating rhythm. 
-                You made me love life, you made me live and enjoy living. You gave me hope in life again.
-            </p>
-            <p>
-                I love you so much, my light ❤️❤️. 
-                I pray that we stay together forever, get married, and you become my wife and the mother of our children—my love, my soul. 
-                Allah bless you, baby ❤️❤️. 
-                Allah never separate me from you, my eyes ❤️❤️. 
-                Allah protect you, my life’s candle ❤️❤️.
-            </p>
-            <p>
-                Baby, you are not just beautiful. You are everything.
-                Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home.
-                I could stare at you forever and still not have enough of you.
-                You are my definition of perfect.
+                Saddonti, I Love You, Today is a special day.<br>
+                Today is the day where my love is birthed, Today is the day when God wrote that our destinies are for each other. Today is 22/2/2025.<br><br>
+
+                Let's go back to Sunday 22/02/2009 when you were born. The moon was shy to shine more because he let you be the brightest star.<br><br>
+
+                Now let me talk about what you mean in my life: You are my moon. When you entered my life, you brightened it. You make me laugh whenever I think of you. I can't imagine a day without you.<br><br>
+
+                Saddonti, 9/5/2024 was the first time we talked, and it was one of the best days of my life. That day made us friends, then besties, then lovers, and now more than lovers—we are one soul. And one day, we will become (زوج & زوجة).<br><br>
+
+                That day, I felt something I had never felt before. I felt that something special was going to happen. Even though I never expected you to love me, especially because you had just come out of something painful, I showed you that I wouldn't take you back to zero—I would lift you to 100 because I am not toxic, I am not a player, I am not bad. I cherish you because I love you truly.<br><br>
+
+                9/5/2024 was a beautiful day because I found the missing piece of my heart—you. Even if you didn’t love me then, you know I had been crushing on you for a long time. 🙂‍↔️😝❤️<br><br>
+
+                I will never let you go. I held onto you, I bet on you, and now you are my love. You are the candle that lights my life, the light in my eyes, my heart, and its every beat. You made me love life, you gave me hope. You brought happiness into my world.<br><br>
+
+                I love you so much, my light ❤️❤️, and I pray we stay together forever, get married, and you become my wife and the mother of my children. My love, my soul ❤️🫂<br><br>
+
+                Allah ykhalili eyek baby ❤️❤️<br>
+                Allah ma yehrmne menik ya 3yoone ❤️❤️<br>
+                Allah yehfazle eyek ya sham3et hayete ❤️❤️<br><br>
+
+                Baby, you are not just beautiful—you are everything. Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home. I could stare at you forever and still not have enough of you. You are my definition of perfect.
             </p>
         </div>
-        <button onclick="showPage('albumPage', 'album')">Back to Album</button>
+
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
