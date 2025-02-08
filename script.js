@@ -33,6 +33,11 @@ function startTimer() {
     }, 1000);
 }
 
+function showAlbum() {
+    document.getElementById('timer-page').style.display = 'none';
+    document.getElementById('album-page').style.display = 'block';
+}
+
 function showLetter() {
     document.getElementById('album-page').style.display = 'none';
     document.getElementById('letter-page').style.display = 'block';
