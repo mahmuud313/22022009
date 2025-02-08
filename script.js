@@ -1,35 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /* Login System */
-    let inputPassword = "";
-    const correctPassword = "1972024";
+    const password = "220225"; // Set your password here
+    let input = "";
 
-    function updatePasswordDisplay() {
-        document.getElementById("password-display").value = "*".repeat(inputPassword.length);
-    }
+    const display = document.getElementById("password-display");
+    const buttons = document.querySelectorAll(".keypad button");
+    const letterContainer = document.getElementById("letter-container");
+    const loginContainer = document.getElementById("login-container");
 
-    function enterDigit(digit) {
-        if (inputPassword.length < 7) {
-            inputPassword += digit;
-            updatePasswordDisplay();
-        }
-    }
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            let value = this.getAttribute("data-value");
 
-    function clearPassword() {
-        inputPassword = "";
-        updatePasswordDisplay();
-    }
+            if (value === "clear") {
+                input = "";
+            } else if (value === "enter") {
+                if (input === password) {
+                    letterContainer.style.display = "block";
+                    loginContainer.style.display = "none";
+                } else {
+                    alert("Wrong Password!");
+                    input = "";
+                }
+            } else {
+                input += value;
+            }
 
-    function checkPassword() {
-        if (inputPassword === correctPassword) {
-            document.getElementById("login-container").style.display = "none";
-            document.getElementById("content-container").style.display = "block";
-        } else {
-            alert("Incorrect Password!");
-            clearPassword();
-        }
-    }
+            display.value = input;
+        });
+    });
 
-    /* Countdown Timer */
+    // Countdown Timer
     function updateCountdown() {
         const startDate = new Date("2024-07-19T22:50:00");
         const now = new Date();
@@ -40,28 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const minutes = Math.floor((diff / (1000 * 60)) % 60);
         const seconds = Math.floor((diff / 1000) % 60);
 
-        document.getElementById("countdown").innerHTML =
+        document.getElementById("countdown").innerText =
             `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
+
     setInterval(updateCountdown, 1000);
-
-    /* Handle Page Navigation */
-    document.getElementById("next-button").addEventListener("click", function () {
-        document.getElementById("album-container").style.display = "none";
-        document.getElementById("letter-container").style.display = "block";
-    });
-
-    /* Attach Event Listeners to Keypad */
-    document.querySelectorAll(".keypad button").forEach(button => {
-        button.addEventListener("click", function () {
-            const value = this.getAttribute("data-value");
-            if (value === "clear") {
-                clearPassword();
-            } else if (value === "enter") {
-                checkPassword();
-            } else {
-                enterDigit(value);
-            }
-        });
-    });
 });
