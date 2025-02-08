@@ -3,73 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Letter</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Happy Birthday Saddonti</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+            transition: background 0.5s;
+        }
+        .hidden { display: none; }
+        .login { background-color: red; }
+        .album { background-color: purple; }
+        .countdown { background-color: pink; }
+        .letter { background-color: purple; }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .keypad input {
+            width: 100px;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .keypad button {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+    </style>
 </head>
-<body>
-    <div class="page" id="login-page">
-        <div class="login-container">
-            <h2>Enter Password</h2>
-            <div class="message">I Love You till the end of my love</div>
-            <div class="keypad">
-                <input type="password" id="password-input" placeholder="Enter Password">
-                <div class="keypad-btn" onclick="addToPassword('1')">1</div>
-                <div class="keypad-btn" onclick="addToPassword('2')">2</div>
-                <div class="keypad-btn" onclick="addToPassword('3')">3</div>
-                <div class="keypad-btn" onclick="addToPassword('4')">4</div>
-                <div class="keypad-btn" onclick="addToPassword('5')">5</div>
-                <div class="keypad-btn" onclick="addToPassword('6')">6</div>
-                <div class="keypad-btn" onclick="addToPassword('7')">7</div>
-                <div class="keypad-btn" onclick="addToPassword('8')">8</div>
-                <div class="keypad-btn" onclick="addToPassword('9')">9</div>
-                <div class="keypad-btn" onclick="addToPassword('0')">0</div>
-                <button class="next-button" onclick="checkPassword()">Enter</button>
+<body class="login">
+    <!-- Login Page -->
+    <div id="loginPage">
+        <h2>Enter Password</h2>
+        <div class="keypad">
+            <input type="password" id="password" readonly>
+            <div>
+                <button onclick="addNumber(1)">1</button>
+                <button onclick="addNumber(2)">2</button>
+                <button onclick="addNumber(3)">3</button>
+                <button onclick="addNumber(4)">4</button>
+                <button onclick="addNumber(5)">5</button>
+                <button onclick="addNumber(6)">6</button>
+                <button onclick="addNumber(7)">7</button>
+                <button onclick="addNumber(8)">8</button>
+                <button onclick="addNumber(9)">9</button>
+                <button onclick="clearInput()">C</button>
+                <button onclick="addNumber(0)">0</button>
+                <button onclick="checkPassword()">OK</button>
             </div>
         </div>
     </div>
 
-    <div class="page" id="timer-page">
+    <!-- Album Page -->
+    <div id="albumPage" class="hidden">
+        <h1>Our Beautiful Memories</h1>
+        <div class="container">
+            <img src="photo1.jpg" alt="Memory 1" width="100%">
+            <img src="photo2.jpg" alt="Memory 2" width="100%">
+            <img src="photo3.jpg" alt="Memory 3" width="100%">
+        </div>
+        <button onclick="showPage('countdownPage', 'countdown')">Next</button>
+    </div>
+
+    <!-- Countdown Page -->
+    <div id="countdownPage" class="hidden">
+        <h1>Time Since 19/07/2024 10:50 PM</h1>
         <div id="timer"></div>
-        <div class="message">أنتِ بدايةُ حياتي وختامهُا</div>
-        <button class="next-button" onclick="nextPage('photo-page')">Next</button>
+        <button onclick="showPage('letterPage', 'letter')">Next</button>
     </div>
 
-    <div class="page" id="photo-page">
-        <div class="photo-album">
-            <h2>Your are my beautiful girl that I will still love her to the end of my life</h2>
-            <div class="images">
-                <img src="image1.jpg" alt="Photo 1">
-                <img src="image2.jpg" alt="Photo 2">
-                <img src="image3.jpg" alt="Photo 3">
-                <img src="image4.jpg" alt="Photo 4">
-                <img src="image5.jpg" alt="Photo 5">
-            </div>
-            <button class="next-button" onclick="nextPage('letter-page')">Next</button>
+    <!-- Love Letter Page -->
+    <div id="letterPage" class="hidden">
+        <h1>To My Princess</h1>
+        <div class="container">
+            <p>
+                Saddonti, I Love You, Today is a special day.
+                Today is the day where my love is birthed, Today is the day when God wrote that our destinies are for each other.
+                Today is 22/2/2025. Let's go back to Sunday 22/02/2009 when you were born. 
+                The moon was like this since he was shy to be brighter when you were born, he let you shine, and now let me talk about what you bring to my life:
+            </p>
+            <p>
+                You are my moon. When you entered my life, you brightened it. 
+                You make me laugh when I start thinking of you. I can't imagine a day without you. 
+                I Love you very much, My Moon. ❤️❤️🌑
+            </p>
+            <p>
+                Saddonti, 9/5/2024 was the first time we talked, and it was one of the most beautiful days. That day made us friends, then best friends, then lovers, and now more than lovers—we are one soul. 
+                And soon, we will become (زوج & زوجة). 
+                That day, I felt something I had never felt before. I sensed that something was going to happen, even though I never expected you would love me back, 
+                especially because you had just come out of something and were not ready to go through it again. But I proved to you that I would never take you back to zero, I will take you to 100. 
+                Because I am not toxic, not a player, not dirty—I am keeping you safe because I truly love you.
+            </p>
+            <p>
+                9/5/2024 was a beautiful day because I felt the missing piece of my heart was with you, even though you didn't love me yet. 
+                But you knew I had a crush on you for a long time 🙂‍↔️😝❤️. 
+                So I held on to you and bet that one day, you would become my beloved—and you did. 😝 
+                You will always be the candle that lights my life, the light of my eyes, my heart, and its beating rhythm. 
+                You made me love life, you made me live and enjoy living. You gave me hope in life again.
+            </p>
+            <p>
+                I love you so much, my light ❤️❤️. 
+                I pray that we stay together forever, get married, and you become my wife and the mother of our children—my love, my soul. 
+                Allah bless you, baby ❤️❤️. 
+                Allah never separate me from you, my eyes ❤️❤️. 
+                Allah protect you, my life’s candle ❤️❤️.
+            </p>
+            <p>
+                Baby, you are not just beautiful. You are everything.
+                Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home.
+                I could stare at you forever and still not have enough of you.
+                You are my definition of perfect.
+            </p>
         </div>
     </div>
 
-    <div class="page" id="letter-page">
-        <div id="letter-content">
-            <p>To My princess:</p>
-            <p>Saddonti, I Love You, Today is a special day</p>
-            <p>Today is the day where my love is birthed,Today is the day when God wrote that our destinies are for each other,Today is 22/2/2025</p>
-            <p>Let's go back for Sunday 22/02/2009 When u are borned. The moon was like this since he was shy to be brighten more when you where borned, he let you to bright, and now let me talk what you make in my life: You are my moon</p>
-            <p>when you enter my life, You bright it, You make me laugh when I start thinking of you, I can't imagine for a day to come when you are not with me, I Love you very much My moon ❤️❤️🌑</p>
-            <p>Saddonti 9/5/2024 kenet awal mara mnehki fiha</p>
-            <p>w ken men ahla el ayyem hal youm hayda khalena nseer ref2a w rje3na serna besties w rje3na lovers w hala2 aktar men lovers nehna serna rooh wahde w ba3den ha nseer (زوج &زوجة)</p>
-            <p>bi hal youm hayda ane hasset bi shi ma hassyto bi 3omre kello.Hasset eno fih shi ha yseer ma3 eno kenet ktir mestab3ed el fekra hayde kermel eno mb3rf bas ma kenet etwaka3 momken thebini khasa eno kente ba3dik tal3a men shi w ma kente mest3ede terja3e tfooti bi nafa el shi mara tenye w terja3e lal 0 bas ane asbatelik eno ma ha raj3ik lal 0, ha khaliki tetla3e lal 100 la2ano mane toxic,mane player,mane wesekh, w mhafez 3layke la2ano bhebik 3njd.</p>
-            <p>9/5/2024 ken nhar helo la2ano hasset el ot3a el na2sa men albe la2yta ma3ik hata law ma ente kente thebini</p>
-            <p>bas ente bta3rfe eno kenet mcursh 3layke men zamen 🙂‍↔️😝❤️. Fa ma ha dayy3ik men eede w tmasaket fiki w rahanet 3layke eno ha tseere habeebte w serte 😝 ente ha tdalle el sham3a el mdawey bi hayete, w noor 3yoone, w albe w da2ato,ente khalyteene heb el hayet, ente khalyteene 3eesh w onboset eni 3ayesh, ente elli raja3teele el amal la hayete.</p>
-            <p>Bhebik ktiiiir ya noor 3yoone ❤️❤️ w nchalla mndal ma3 ba3ed lal ekher w mntjwz ba3ed w btseere marte w em wlede ya em mhamad ya rooh albe ❤️🫂</p>
-            <p>Allah ykhalili eyeke baby ❤️❤️</p>
-            <p>Allah ma yehrmne menik ya 3yoone ❤️❤️</p>
-            <p>Allah yehfazle eyeke ya sham3et hayete ❤️❤️</p>
-            <p>Baby</p>
-            <p>You're not just beautiful.You're everything.Your eyes hold galaxies,your smile lights up my darkest days,and your voice feels like home.I could stare at you forever and still not have enough for you.You're my definition of perfect.</p>
-        </div>
-        <button class="next-button" onclick="nextPage('login-page')">Back to Login</button>
-    </div>
+    <script>
+        function checkPassword() {
+            let input = document.getElementById("password").value;
+            if (input === "1972024") {
+                showPage("albumPage", "album");
+            } else {
+                alert("Wrong password! Try again.");
+            }
+        }
 
-    <script src="script.js"></script>
+        function addNumber(num) {
+            document.getElementById("password").value += num;
+        }
+
+        function clearInput() {
+            document.getElementById("password").value = "";
+        }
+
+        function showPage(pageId, bgClass) {
+            document.querySelectorAll("div").forEach(div => div.classList.add("hidden"));
+            document.getElementById(pageId).classList.remove("hidden");
+            document.body.className = bgClass;
+        }
+
+        function startCountdown() {
+            const startDate = new Date("July 19, 2024 22:50:00").getTime();
+            setInterval(() => {
+                let now = new Date().getTime();
+                let elapsed = now - startDate;
+                let days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+                document.getElementById("timer").innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+            }, 1000);
+        }
+        startCountdown();
+    </script>
 </body>
 </html>
