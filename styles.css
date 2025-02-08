@@ -71,14 +71,10 @@ body {
 
 /* Love Letter Page */
 #letter-page {
-    background-color: pink;
-    font-family: 'Courier New', monospace;
-}
-
-.letter-paper {
-    background: beige;
+    background-color: purple;
+    color: white;
+    font-style: italic;
     padding: 20px;
-    width: 80%;
-    border: 2px solid brown;
     font-size: 18px;
+    width: 80%;
 }
