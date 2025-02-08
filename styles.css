@@ -1,126 +1,105 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #fff;
-    overflow-x: hidden;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* Login Page Styling (Blue color) */
-#loginPage {
-    display: flex;
-    flex-direction: column;
+.page {
+    display: none;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #007bff; /* Blue color for Spiderman theme */
+    flex-direction: column;
+}
+
+/* Login Page */
+#login-page {
+    background-color: #0D47A1;
     color: white;
 }
 
-#passwordInput {
-    width: 250px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    border: 2px solid #fff;
-    border-radius: 5px;
+.login-message {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-#loginButton {
-    padding: 10px 20px;
-    background-color: #0056b3;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
+.login-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-#loginButton:hover {
-    background-color: #003d73; /* Darker blue on hover */
+.keypad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#message {
-    font-size: 18px;
-    color: #ffcc00; /* Spiderman yellow */
-    margin-top: 20px;
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 10px;
 }
 
-/* Timer Page Styling (Red color scheme) */
-#timerPage {
-    display: none;
+.keypad button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+}
+
+/* Timer Page */
+#timer-page {
     background-color: red;
     color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-#timeIndicator {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-#timerPage p {
-    font-size: 18px;
-    color: white;
-}
-
-/* Photo Pages Styling */
-#photoPage {
-    display: none;
-    background-color: #0056b3; /* Blue */
-    color: white;
-    padding: 50px;
-    height: 100vh;
-    text-align: center;
-}
-
-#photoPage img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    margin-bottom: 20px;
-}
-
-#photoPage video {
-    max-width: 100%;
-    margin-top: 20px;
-}
-
-/* Message Page Styling (Letter style) */
-#messagePage {
-    display: none;
-    background-color: #f7f7f7; /* Light background to look like paper */
-    color: black;
-    padding: 50px;
-    height: 100vh;
-    text-align: center;
-    font-size: 20px;
-    line-height: 1.6;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace; /* Vintage font */
-    background-image: url('paper_texture.jpg'); /* Optional paper texture image */
-}
-
-/* Text Adjustments */
-#messagePage p {
-    font-size: 18px;
-    color: #5d4037; /* Brownish color for vintage feel */
-}
-
-.letterText {
+.timer-text {
     font-size: 24px;
-    color: #5d4037; /* Dark brown for vintage letter */
-    line-height: 1.8;
+}
+
+#time-counter {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 20px;
+}
+
+/* Album Page */
+#album-page {
+    background-color: #0D47A1;
+    color: white;
+}
+
+.album-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.gallery img, .gallery video {
+    width: 200px;
+    margin: 10px;
+}
+
+/* Love Letter Page */
+#letter-page {
+    background-color: pink;
+    color: black;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.letter-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.letter-content {
+    width: 80%;
+    font-size: 18px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
