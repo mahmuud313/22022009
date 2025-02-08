@@ -13,10 +13,12 @@ body {
 
 #login-page {
     display: block;
+    background-color: red; /* Login page background red */
+    color: white;
 }
 
 h2 {
-    color: #333;
+    color: #fff;
 }
 
 .next-button {
@@ -82,9 +84,14 @@ h2 {
     font-size: 16px;
 }
 
-#timer-page, #album-page, #letter-page {
+#timer-page {
+    background-color: pink; /* Count days page background pink */
     padding: 20px;
-    background-color: #f7f7f7;
+}
+
+.photo-album {
+    background-color: purple; /* Album page background purple */
+    padding: 20px;
 }
 
 .photo-album img {
@@ -94,14 +101,21 @@ h2 {
     object-fit: cover;
 }
 
-#letter-page p {
-    text-align: left;
-    line-height: 1.8;
+#letter-page {
+    background-color: purple; /* Love letter background purple */
+    color: white;
+    padding: 20px;
     font-size: 16px;
     font-style: italic;
-    color: #800080; /* Purple color */
-    background-color: #f3f3f3;
-    padding: 15px;
-    border-radius: 10px;
+    line-height: 1.8;
+    text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#letter-page p {
+    background-color: purple; /* Purple background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
 }
