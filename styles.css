@@ -1,67 +1,75 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    text-align: center;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.page {
+/* Login Page */
+#login-page {
+    background: red;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 10px;
+}
+
+#keypad button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+}
+
+#passwordInput {
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+    width: 180px;
+}
+
+/* Hidden Content */
+.hidden {
     display: none;
 }
 
-#loginPage {
-    text-align: center;
-}
-
-.keypad {
-    margin-top: 20px;
-}
-
-.row {
+/* Countdown Page */
+#countdown-page {
+    background: pink;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.key {
-    background-color: #ff6f61;
-    border: none;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-    margin: 5px;
-    cursor: pointer;
-    width: 60px;
+/* Album Page */
+#album-page {
+    background: purple;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#passwordDisplay {
-    margin-top: 10px;
-    font-size: 24px;
-}
-
-#contentPage {
-    text-align: center;
-}
-
-#countdown {
-    margin-bottom: 20px;
-}
-
-#album img {
-    width: 300px;
+.gallery img, .gallery video {
+    width: 200px;
     margin: 10px;
 }
 
-#album video {
-    width: 300px;
-    margin: 10px;
+/* Letter Page */
+#letter-page {
+    background: purple;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-#loveLetter {
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: left;
-    padding: 20px;
