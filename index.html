@@ -4,92 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Saddonti</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            color: white;
-            transition: background 0.5s;
-        }
-        .hidden { display: none; }
-        .login { background-color: red; }
-        .album { background-color: purple; }
-        .countdown { background-color: pink; }
-        .letter { background-color: purple; }
-        .container {
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            background: white;
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .keypad input {
-            width: 100px;
-            text-align: center;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .keypad button {
-            width: 30px;
-            height: 30px;
-            margin: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="login">
+
     <!-- Login Page -->
-    <div id="loginPage">
-        <h2>Enter Password</h2>
+    <div id="loginPage" class="page">
+        <h1>Enter Password</h1>
         <div class="keypad">
             <input type="password" id="password" readonly>
-            <div>
-                <button onclick="addNumber(1)">1</button>
-                <button onclick="addNumber(2)">2</button>
-                <button onclick="addNumber(3)">3</button>
-                <button onclick="addNumber(4)">4</button>
-                <button onclick="addNumber(5)">5</button>
-                <button onclick="addNumber(6)">6</button>
-                <button onclick="addNumber(7)">7</button>
-                <button onclick="addNumber(8)">8</button>
-                <button onclick="addNumber(9)">9</button>
-                <button onclick="clearInput()">C</button>
-                <button onclick="addNumber(0)">0</button>
-                <button onclick="checkPassword()">OK</button>
-            </div>
+            <button onclick="addNumber(1)">1</button>
+            <button onclick="addNumber(2)">2</button>
+            <button onclick="addNumber(3)">3</button>
+            <button onclick="addNumber(4)">4</button>
+            <button onclick="addNumber(5)">5</button>
+            <button onclick="addNumber(6)">6</button>
+            <button onclick="addNumber(7)">7</button>
+            <button onclick="addNumber(8)">8</button>
+            <button onclick="addNumber(9)">9</button>
+            <button onclick="clearInput()">C</button>
+            <button onclick="addNumber(0)">0</button>
+            <button onclick="checkPassword()">OK</button>
         </div>
     </div>
 
     <!-- Album Page -->
-    <div id="albumPage" class="hidden">
-        <h1>Our Beautiful Memories</h1>
-        <div class="container">
-            <img src="photo1.jpg" alt="Memory 1" width="100%">
-            <img src="photo2.jpg" alt="Memory 2" width="100%">
-            <img src="photo3.jpg" alt="Memory 3" width="100%">
-        </div>
+    <div id="albumPage" class="page hidden">
+        <h1>Our Memories</h1>
+        <img src="photo1.jpg" alt="Memory 1">
+        <img src="photo2.jpg" alt="Memory 2">
+        <img src="photo3.jpg" alt="Memory 3">
         <button onclick="showPage('countdownPage', 'countdown')">Next</button>
     </div>
 
     <!-- Countdown Page -->
-    <div id="countdownPage" class="hidden">
-        <h1>Time Since 19/07/2024 10:50 PM</h1>
+    <div id="countdownPage" class="page hidden">
+        <h1>Time Since We Met</h1>
         <div id="timer"></div>
         <button onclick="showPage('letterPage', 'letter')">Next</button>
     </div>
 
     <!-- Love Letter Page -->
-    <div id="letterPage" class="hidden">
+    <div id="letterPage" class="page hidden">
         <h1>To My Princess</h1>
         <div class="container">
             <p>
@@ -131,45 +88,8 @@
                 You are my definition of perfect.
             </p>
         </div>
+        <button onclick="showPage('albumPage', 'album')">Back to Album</button>
     </div>
 
-    <script>
-        function checkPassword() {
-            let input = document.getElementById("password").value;
-            if (input === "1972024") {
-                showPage("albumPage", "album");
-            } else {
-                alert("Wrong password! Try again.");
-            }
-        }
-
-        function addNumber(num) {
-            document.getElementById("password").value += num;
-        }
-
-        function clearInput() {
-            document.getElementById("password").value = "";
-        }
-
-        function showPage(pageId, bgClass) {
-            document.querySelectorAll("div").forEach(div => div.classList.add("hidden"));
-            document.getElementById(pageId).classList.remove("hidden");
-            document.body.className = bgClass;
-        }
-
-        function startCountdown() {
-            const startDate = new Date("July 19, 2024 22:50:00").getTime();
-            setInterval(() => {
-                let now = new Date().getTime();
-                let elapsed = now - startDate;
-                let days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-                document.getElementById("timer").innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
-            }, 1000);
-        }
-        startCountdown();
-    </script>
 </body>
 </html>
