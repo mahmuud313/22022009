@@ -3,79 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Love Story</title>
+    <title>Love Website</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-
     <!-- Login Page -->
     <div id="login-page" class="page">
-        <h1 class="login-message">I Love You till the end of my love</h1>
-        <img src="your-image.jpg" alt="Us Together" class="login-image">
-        
-        <div class="keypad-container">
-            <input type="password" id="password" placeholder="Enter Password" readonly>
+        <div class="login-container">
+            <img src="your-image.jpg" alt="Your Image" class="image">
+            <h2>Enter Password</h2>
             <div class="keypad">
-                <button onclick="enterNumber(1)">1</button>
-                <button onclick="enterNumber(2)">2</button>
-                <button onclick="enterNumber(3)">3</button>
-                <button onclick="enterNumber(4)">4</button>
-                <button onclick="enterNumber(5)">5</button>
-                <button onclick="enterNumber(6)">6</button>
-                <button onclick="enterNumber(7)">7</button>
-                <button onclick="enterNumber(8)">8</button>
-                <button onclick="enterNumber(9)">9</button>
-                <button onclick="clearPassword()">C</button>
-                <button onclick="enterNumber(0)">0</button>
-                <button onclick="checkPassword()">OK</button>
+                <input type="password" id="password" maxlength="6" class="password-input" placeholder="Password">
+                <div class="keypad-buttons">
+                    <button class="keypad-btn" onclick="addToPassword('1')">1</button>
+                    <button class="keypad-btn" onclick="addToPassword('2')">2</button>
+                    <button class="keypad-btn" onclick="addToPassword('3')">3</button>
+                    <button class="keypad-btn" onclick="addToPassword('4')">4</button>
+                    <button class="keypad-btn" onclick="addToPassword('5')">5</button>
+                    <button class="keypad-btn" onclick="addToPassword('6')">6</button>
+                    <button class="keypad-btn" onclick="addToPassword('7')">7</button>
+                    <button class="keypad-btn" onclick="addToPassword('8')">8</button>
+                    <button class="keypad-btn" onclick="addToPassword('9')">9</button>
+                    <button class="keypad-btn" onclick="addToPassword('0')">0</button>
+                    <button class="keypad-btn" onclick="submitPassword()">Enter</button>
+                </div>
             </div>
+            <p class="message">I Love You till the end of my love</p>
         </div>
     </div>
 
     <!-- Timer Page -->
-    <div id="timer-page" class="page hidden">
-        <h1 id="time-counter"></h1>
-        <h2 class="arabic-text">أنتِ بدايةُ حياتي وختامُها</h2>
-        <button onclick="nextPage()">Next</button>
+    <div id="timer-page" class="page" style="display:none;">
+        <h2>Time Passed Since 19/7/2024 10:50 PM</h2>
+        <div id="countdown"></div>
+        <p>أنتِ بدايةُ حياتي وخِتامُها</p>
     </div>
 
-    <!-- Album Page -->
-    <div id="album-page" class="page hidden">
-        <h1 class="album-title">You are my beautiful girl that I will still love her to the end of my life</h1>
-        <div class="album">
-            <img src="photo1.jpg" alt="Photo 1">
-            <img src="photo2.jpg" alt="Photo 2">
-            <img src="photo3.jpg" alt="Photo 3">
-            <img src="photo4.jpg" alt="Photo 4">
-            <img src="photo5.jpg" alt="Photo 5">
+    <!-- Photo Album Page -->
+    <div id="album-page" class="page" style="display:none;">
+        <h2>Your are my beautiful girl that I will still love her to the end of my life</h2>
+        <div class="photo-album">
+            <!-- Add images here -->
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5">
         </div>
-        <div class="videos">
-            <video controls src="video1.mp4"></video>
-            <video controls src="video2.mp4"></video>
-            <video controls src="video3.mp4"></video>
-        </div>
-        <button onclick="nextPage()">Next</button>
+        <button onclick="showLetter()">Next</button>
     </div>
 
-    <!-- Love Letter Page -->
-    <div id="letter-page" class="page hidden">
-        <h1>To My Princess</h1>
-        <p><em>
-            Saddonti, I Love You, Today is a special day. Today is the day where my love is birthed. 
-            Today is the day when God wrote that our destinies are for each other. Today is 22/2/2025.  
-            Let's go back to Sunday 22/02/2009 when you were born.  
-            The moon was like this because he was shy to shine more when you were born, he let you shine instead.  
-            <br><br>
-            You are my moon. When you entered my life, you brightened it.  
-            You make me laugh whenever I think of you.  
-            I can't imagine a day without you. I love you so much, my moon ❤️❤️🌑  
-            <br><br>
-            You will always be the candle that lights my life, my heart, and my soul.  
-            I love you so much, my beautiful angel. One day, you will be my wife and the mother of my children.  
-            ❤️❤️ Allah ykhalili eyek ❤️❤️  
-        </em></p>
+    <!-- Letter Page -->
+    <div id="letter-page" class="page" style="display:none;">
+        <h2>Your Love Letter</h2>
+        <p>
+            To My Princess:
+        </p>
+
+        <p>
+            Saddonti, I Love You, Today is a special day.<br>
+            Today is the day where my love is birthed, today is the day when God wrote that our destinies are for each other. Today is 22/2/2025.<br>
+            Let's go back to Sunday 22/02/2009 when you were born. The moon was like this since it was shy to be brighter more when you were born. It let you brighten, and now let me talk about what you make in my life:<br>
+            You are my moon. When you entered my life, you brightened it. You make me laugh when I start thinking of you. I can't imagine for a day to come when you are not with me. I Love you very much, my moon ❤️❤️🌑.
+        </p>
+
+        <p>
+            Saddonti 9/5/2024<br>
+            It was the first time we talked.<br>
+            And it was one of the best days. That day we became friends, and we turned into best friends, then lovers, and now more than lovers, we became one soul, and after that, we became (husband and wife).<br>
+            On this day, I felt something I had never felt in my whole life. I felt that something was going to happen, even though I had always thought it was impossible. But I didn’t expect that you would come into my life, especially after being away from me. But I proved to you that I would not let you go.<br>
+            I want you to always be the one I love, the one I share my heart with.  
+        </p>
+
+        <p>
+            On 9/5/2024, it was a beautiful day because I felt the missing piece of my heart when I found you by my side, even if you didn’t love me back.<br>
+            But you know, I was a little unsure of us from the beginning 🙂‍↔️😝❤️.<br>
+            I will never let you go, I’ll hold onto you, and I’m sure that you’ll become my beloved.<br>
+            You are the light of my life, the one who brightens my eyes and heart. You made me love life and made me feel alive, and you restored my hope.<br>
+            I love you so much, my light ❤️❤️, and I hope we’ll stay together forever, get married, and have children together. You’ll be the mother of my children, my love ❤️🫂.
+        </p>
+
+        <p>
+            God, please keep her for me, my baby ❤️❤️.<br>
+            God, never let me be without her, my love ❤️❤️.<br>
+            God, protect her, my light ❤️❤️.<br>
+            Baby, you're not just beautiful. You're everything. Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home. I could stare at you forever and still not have enough of you. You're my definition of perfect.
+        </p>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
