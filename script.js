@@ -1,44 +1,54 @@
-// Password Authentication
-const password = "112025";
-const loginButton = document.getElementById("loginButton");
-const passwordInput = document.getElementById("passwordInput");
-const loginPage = document.getElementById("loginPage");
-const timerPage = document.getElementById("timerPage");
-const photoPage = document.getElementById("photoPage");
-const messagePage = document.getElementById("messagePage");
-
-loginButton.addEventListener("click", function() {
-    if (passwordInput.value === password) {
-        loginPage.style.display = "none";
-        timerPage.style.display = "flex";  // Show Timer Page
-        startTimer();  // Start Timer
-    } else {
-        alert("Incorrect Password!");
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    showPage("login-page");
+    updateTimer();
 });
 
-// Timer Logic
-function startTimer() {
-    const targetDate = new Date("July 19, 2024 22:50:00").getTime();
-    const timerInterval = setInterval(function() {
-        const now = new Date().getTime();
-        const timeLeft = targetDate - now;
+// Password functionality
+const correctPassword = "112025";
+let enteredPassword = "";
 
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            document.getElementById("timeIndicator").innerHTML = "The time has arrived!";
-        } else {
-            let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            document.getElementById("timeIndicator").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        }
-    }, 1000);
+function enterDigit(digit) {
+    if (enteredPassword.length < 6) {
+        enteredPassword += digit;
+        document.getElementById("passwordInput").value = "*".repeat(enteredPassword.length);
+    }
 }
 
-// Navigate to Photo Page after Timer
-setTimeout(() => {
-    timerPage.style.display = "none";
-    photoPage.style.display = "block";
-}, 10000); // After 10 seconds, move to photo page (for testing)
+function clearPassword() {
+    enteredPassword = "";
+    document.getElementById("passwordInput").value = "";
+}
+
+function checkPassword() {
+    if (enteredPassword === correctPassword) {
+        showPage("timer-page");
+    } else {
+        alert("Incorrect password! Try again.");
+        clearPassword();
+    }
+}
+
+// Page navigation
+function showPage(pageId) {
+    document.querySelectorAll(".page").forEach(page => page.style.display = "none");
+    document.getElementById(pageId).style.display = "flex";
+}
+
+function nextPage(nextPageId) {
+    showPage(nextPageId);
+}
+
+// Timer function
+function updateTimer() {
+    const startDate = new Date("July 19, 2024 22:50:00").getTime();
+    const now = new Date().getTime();
+    const elapsed = now - startDate;
+
+    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+    document.getElementById("time-counter").innerText = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+    setTimeout(updateTimer, 1000);
+}
