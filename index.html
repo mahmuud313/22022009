@@ -3,46 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love</title>
+    <title>Valentine's Special</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Login Section -->
-    <div id="login-container" class="login-container">
-        <h2>Enter the Password</h2>
-        <input type="text" id="password-display" readonly>
-        <div class="keypad">
-            <button data-value="1">1</button>
-            <button data-value="2">2</button>
-            <button data-value="3">3</button>
-            <button data-value="4">4</button>
-            <button data-value="5">5</button>
-            <button data-value="6">6</button>
-            <button data-value="7">7</button>
-            <button data-value="8">8</button>
-            <button data-value="9">9</button>
-            <button data-value="clear" id="clear">C</button>
-            <button data-value="0">0</button>
-            <button data-value="enter" id="enter">✔</button>
+    <!-- Login Page -->
+    <div id="loginPage" class="page">
+        <h2>Enter Password</h2>
+        <div id="keypad">
+            <div class="row">
+                <button class="key" onclick="pressKey(1)">1</button>
+                <button class="key" onclick="pressKey(2)">2</button>
+                <button class="key" onclick="pressKey(3)">3</button>
+            </div>
+            <div class="row">
+                <button class="key" onclick="pressKey(4)">4</button>
+                <button class="key" onclick="pressKey(5)">5</button>
+                <button class="key" onclick="pressKey(6)">6</button>
+            </div>
+            <div class="row">
+                <button class="key" onclick="pressKey(7)">7</button>
+                <button class="key" onclick="pressKey(8)">8</button>
+                <button class="key" onclick="pressKey(9)">9</button>
+            </div>
+            <div class="row">
+                <button class="key" onclick="pressKey(0)">0</button>
+                <button class="key" onclick="clearPassword()">Clear</button>
+                <button class="key" onclick="submitPassword()">Submit</button>
+            </div>
         </div>
+        <div id="passwordDisplay"></div>
     </div>
 
-    <!-- Hidden Content -->
-    <div id="content-container" class="hidden">
-
-        <!-- Countdown Timer -->
-        <div class="countdown-container">
-            <h2>Time Since Our Special Date</h2>
-            <p id="countdown">Loading...</p>
+    <!-- Content Page -->
+    <div id="contentPage" class="page" style="display: none;">
+        <div id="countdown">
+            <h2>Countdown Timer</h2>
+            <p id="countdownDisplay"></p>
         </div>
-
-        <!-- Album Section -->
-        <div id="album-container" class="album">
-            <h2>Our Memories</h2>
-            <img src="20250130_211148.jpg" alt="Memory 1">
-            <img src="GridArt_20250130_205329683.jpg" alt="Memory 2">
-            <img src="GridArt_20250130_212010513.jpg" alt="Memory 3">
+        <div id="album">
+            <h2>Photo Album</h2>
+            <img src="20250130_211148.jpg" alt="Photo 1">
+            <img src="GridArt_20250130_205329683.jpg" alt="Photo 2">
+            <img src="GridArt_20250130_212010513.jpg" alt="Photo 3">
+            <!-- Videos -->
             <video controls>
                 <source src="video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -52,38 +56,26 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-
-        <!-- Love Letter -->
-        <div id="letter-container" class="love-letter">
-            <h2>To My Princess</h2>
+        <div id="loveLetter">
+            <h2>Love Letter</h2>
             <p>
-                Saddonti, I Love You, Today is a special day.<br>
-                Today is the day where my love is birthed, Today is the day when God wrote that our destinies are for each other. Today is 22/2/2025.<br><br>
-
-                Let's go back to Sunday 22/02/2009 when you were born. The moon was shy to shine more because he let you be the brightest star.<br><br>
-
-                Now let me talk about what you mean in my life: You are my moon. When you entered my life, you brightened it. You make me laugh whenever I think of you. I can't imagine a day without you.<br><br>
-
-                Saddonti, 9/5/2024 was the first time we talked, and it was one of the best days of my life. That day made us friends, then besties, then lovers, and now more than lovers—we are one soul. And one day, we will become (زوج & زوجة).<br><br>
-
-                That day, I felt something I had never felt before. I felt that something special was going to happen. Even though I never expected you to love me, especially because you had just come out of something painful, I showed you that I wouldn't take you back to zero—I would lift you to 100 because I am not toxic, I am not a player, I am not bad. I cherish you because I love you truly.<br><br>
-
-                9/5/2024 was a beautiful day because I found the missing piece of my heart—you. Even if you didn’t love me then, you know I had been crushing on you for a long time. 🙂‍↔️😝❤️<br><br>
-
-                I will never let you go. I held onto you, I bet on you, and now you are my love. You are the candle that lights my life, the light in my eyes, my heart, and its every beat. You made me love life, you gave me hope. You brought happiness into my world.<br><br>
-
-                I love you so much, my light ❤️❤️, and I pray we stay together forever, get married, and you become my wife and the mother of my children. My love, my soul ❤️🫂<br><br>
-
-                Allah ykhalili eyek baby ❤️❤️<br>
-                Allah ma yehrmne menik ya 3yoone ❤️❤️<br>
-                Allah yehfazle eyek ya sham3et hayete ❤️❤️<br><br>
-
-                Baby, you are not just beautiful—you are everything. Your eyes hold galaxies, your smile lights up my darkest days, and your voice feels like home. I could stare at you forever and still not have enough of you. You are my definition of perfect.
+                To My princess:<br>
+                Saddonti, I Love You, Today is a special day<br>
+                Today is the day where my love is birthed,Today is the day when God wrote that our destinies are for each other,Today is 22/2/2025<br>
+                Let's go back for Sunday 22/02/2009 When u are borned. The moon was like this since he was shy to be brighten more when you where borned,he let you to bright,and now let me talk what you make in my life: You are my moon<br>
+                when you enters my life,You bright it,You make me laugh when I start thinking of you,I can't imagine for a day to come when you are not with me,I Love you very much My moon❤️❤️🌑<br>
+                Saddonti 9/5/2024 kenet awal mara mnehki fiha<br>
+                w ken men ahla el ayyem hal youm hayda khalena nseer ref2a w rje3na serna besties w rje3na lovers w hala2 aktar men lovers nehna serna rooh wahde w ba3den ha nseer (زوج &زوجة)<br>
+                bi hal youm hayda ane hasset bi shi ma hassyto bi 3omre kello.Hasset eno fih shi ha yseer ma3 eno kenet ktir mestab3ed el fekra hayde kermel eno mb3rf bas ma kenet etwaka3 momken thebini khasa eno kente ba3dik tal3a men shi w ma kente mest3ede terja3e tfooti bi nafa el shi mara tenye w terja3e lal 0 bas ane asbatelik eno ma ha raj3ik lal 0, ha khaliki tetla3e lal 100 la2ano mane toxic,mane player,mane wesekh, w mhafez 3layke la2ano bhebik 3njd.9/5/2024 ken nhar helo la2ano hasset el ot3a el na2sa men albe la2yta ma3ik hata law ma ente kente thebini<br>
+                bas ente bta3rfe eno kenet mcursh 3layke men zamen🙂‍↔️😝❤️.Fa ma ha dayy3ik men eede w tmasaket fiki w rahanet 3layke eno ha tseere habeebte w serte😝 ente ha tdalle el sham3a el mdawey bi hayete,w noor 3yoone, w albe w da2ato,ente khalyteene heb el hayet,ente khalyteene 3eesh w onboset eni 3ayesh,ente elli raja3teele el amal la hayete. Bhebik ktiiiir ya noor 3yoone❤️❤️ w nchalla mndal ma3 ba3ed lal ekher w mntjwz ba3ed w btseere marte w em wlede ya em mhamad ya rooh albe ❤️🫂<br>
+                Allah ykhalili eyeke baby❤️❤️<br>
+                Allah ma yehrmne menik ya 3yoone❤️❤️<br>
+                Allah yehfazle eyeke ya sham3et hayete❤️❤️<br>
+                Baby<br>
+                You're not just beautiful.You're everything.Your eyes hold galaxies,your smile lights up my darkest days,and your voice feels like home.I could stare at you forever and still not have enough for you.You're my definition of perfect.<br>
             </p>
         </div>
-
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
