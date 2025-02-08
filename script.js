@@ -1,43 +1,67 @@
-// Function to Check Password
-function checkPassword() {
-    let input = document.getElementById("password").value;
-    if (input === "1972024") {
-        showPage("albumPage", "album");
-    } else {
-        alert("Wrong password! Try again.");
+document.addEventListener("DOMContentLoaded", function () {
+    /* Login System */
+    let inputPassword = "";
+    const correctPassword = "1972024";
+
+    function updatePasswordDisplay() {
+        document.getElementById("password-display").value = "*".repeat(inputPassword.length);
     }
-}
 
-// Add Number to Keypad Input
-function addNumber(num) {
-    document.getElementById("password").value += num;
-}
+    function enterDigit(digit) {
+        if (inputPassword.length < 7) {
+            inputPassword += digit;
+            updatePasswordDisplay();
+        }
+    }
 
-// Clear Keypad Input
-function clearInput() {
-    document.getElementById("password").value = "";
-}
+    function clearPassword() {
+        inputPassword = "";
+        updatePasswordDisplay();
+    }
 
-// Show Specific Page
-function showPage(pageId, bgClass) {
-    document.querySelectorAll(".page").forEach(div => div.classList.add("hidden"));
-    document.getElementById(pageId).classList.remove("hidden");
-    document.body.className = bgClass;
-}
+    function checkPassword() {
+        if (inputPassword === correctPassword) {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("content-container").style.display = "block";
+        } else {
+            alert("Incorrect Password!");
+            clearPassword();
+        }
+    }
 
-// Countdown Timer from 19/07/2024 10:50 PM
-function startCountdown() {
-    const startDate = new Date("July 19, 2024 22:50:00").getTime();
-    setInterval(() => {
-        let now = new Date().getTime();
-        let elapsed = now - startDate;
-        let days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-        document.getElementById("timer").innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
-    }, 1000);
-}
+    /* Countdown Timer */
+    function updateCountdown() {
+        const startDate = new Date("2024-07-19T22:50:00");
+        const now = new Date();
+        const diff = now - startDate;
 
-// Start Countdown on Load
-startCountdown();
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("countdown").innerHTML =
+            `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    }
+    setInterval(updateCountdown, 1000);
+
+    /* Handle Page Navigation */
+    document.getElementById("next-button").addEventListener("click", function () {
+        document.getElementById("album-container").style.display = "none";
+        document.getElementById("letter-container").style.display = "block";
+    });
+
+    /* Attach Event Listeners to Keypad */
+    document.querySelectorAll(".keypad button").forEach(button => {
+        button.addEventListener("click", function () {
+            const value = this.getAttribute("data-value");
+            if (value === "clear") {
+                clearPassword();
+            } else if (value === "enter") {
+                checkPassword();
+            } else {
+                enterDigit(value);
+            }
+        });
+    });
+});
