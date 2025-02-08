@@ -1,29 +1,43 @@
-let currentPage = 'login-page';
-let passwordInput = '';
-const correctPassword = '1972024';
-
+// Password Check Function
 function checkPassword() {
-    if (passwordInput === correctPassword) {
-        nextPage('timer-page');
+    let input = document.getElementById("password").value;
+    if (input === "1972024") {
+        showPage("albumPage", "album");
     } else {
-        alert('Incorrect password, please try again.');
-        passwordInput = '';
-        document.getElementById('password-input').value = '';
+        alert("Wrong password! Try again.");
     }
 }
 
-function addToPassword(number) {
-    passwordInput += number;
-    document.getElementById('password-input').value = passwordInput;
+// Add Number to Keypad Input
+function addNumber(num) {
+    document.getElementById("password").value += num;
 }
 
-function nextPage(pageId) {
-    document.getElementById(currentPage).style.display = 'none';
-    currentPage = pageId;
-    document.getElementById(currentPage).style.display = 'block';
+// Clear Keypad Input
+function clearInput() {
+    document.getElementById("password").value = "";
 }
 
-function updateTimer() {
-    const startDate = new Date('July 19, 2024 22:50:00');
-    const currentDate = new Date();
-    const timeDifference = currentDate
+// Function to Show Specific Page
+function showPage(pageId, bgClass) {
+    document.querySelectorAll("div").forEach(div => div.classList.add("hidden"));
+    document.getElementById(pageId).classList.remove("hidden");
+    document.body.className = bgClass;
+}
+
+// Countdown Timer from 19/07/2024 10:50 PM
+function startCountdown() {
+    const startDate = new Date("July 19, 2024 22:50:00").getTime();
+    setInterval(() => {
+        let now = new Date().getTime();
+        let elapsed = now - startDate;
+        let days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+    }, 1000);
+}
+
+// Start Countdown on Page Load
+startCountdown();
