@@ -1,4 +1,4 @@
-// Password Check Function
+// Function to Check Password
 function checkPassword() {
     let input = document.getElementById("password").value;
     if (input === "1972024") {
@@ -18,9 +18,9 @@ function clearInput() {
     document.getElementById("password").value = "";
 }
 
-// Function to Show Specific Page
+// Show Specific Page
 function showPage(pageId, bgClass) {
-    document.querySelectorAll("div").forEach(div => div.classList.add("hidden"));
+    document.querySelectorAll(".page").forEach(div => div.classList.add("hidden"));
     document.getElementById(pageId).classList.remove("hidden");
     document.body.className = bgClass;
 }
@@ -39,5 +39,5 @@ function startCountdown() {
     }, 1000);
 }
 
-// Start Countdown on Page Load
+// Start Countdown on Load
 startCountdown();
