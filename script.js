@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const display = document.getElementById("password-display");
     const buttons = document.querySelectorAll(".keypad button");
-    const letterContainer = document.getElementById("letter-container");
+    const contentContainer = document.getElementById("content-container");
     const loginContainer = document.getElementById("login-container");
 
     buttons.forEach((button) => {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 input = "";
             } else if (value === "enter") {
                 if (input === password) {
-                    letterContainer.style.display = "block";
+                    contentContainer.classList.remove("hidden");
                     loginContainer.style.display = "none";
                 } else {
                     alert("Wrong Password!");
