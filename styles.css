@@ -1,79 +1,116 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
+    background-color: #222;
     color: white;
-    transition: background 0.5s;
+    text-align: center;
 }
 
-/* Hide All Pages Initially */
-.hidden { display: none; }
-
-/* Page Background Colors */
-.login { background-color: red; }
-.album { background-color: purple; }
-.countdown { background-color: pink; }
-.letter { background-color: purple; }
-
-/* Main Content Container */
-.container {
+/* Login Page */
+.login-container {
+    background-color: #333;
+    width: 320px;
     padding: 20px;
-    max-width: 600px;
-    margin: auto;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-align: center;
 }
 
-/* Buttons */
-button {
+#password-display {
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background: #555;
+    color: white;
+    border-radius: 5px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 220px;
+}
+
+.keypad button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.keypad button:active {
+    background-color: #ddd;
+}
+
+#clear, #enter {
+    background-color: red;
+    color: white;
+}
+
+#enter {
+    background-color: green;
+}
+
+/* Countdown Timer */
+.countdown-container {
+    background-color: pink;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 18px;
+}
+
+/* Album Section */
+.album {
+    background-color: purple;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.album img, .album video {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Love Letter */
+.love-letter {
+    background-color: purple;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 18px;
+    text-align: left;
+    padding: 15px;
+}
+
+/* Next Button */
+.next-button {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 10px 20px;
-    font-size: 16px;
-    background: white;
-    color: black;
+    font-size: 18px;
+    background-color: #ff69b4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Keypad Styling */
-.keypad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 180px;
-    margin: auto;
+.next-button:hover {
+    background-color: #ff1493;
 }
 
-.keypad input {
-    grid-column: span 3;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 5px;
-}
-
-.keypad button {
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-    cursor: pointer;
-    background: black;
-    color: white;
-    border-radius: 5px;
-}
-
-/* Image Album */
-.album img, .album video {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* Countdown Timer */
-#timer {
-    font-size: 20px;
-    margin-top: 20px;
+/* Hide Content Initially */
+#content-container {
+    display: none;
 }
