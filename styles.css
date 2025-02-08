@@ -1,45 +1,67 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #121212;
-    color: white;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.hidden {
+.page {
     display: none;
 }
 
-.countdown-container, .album, .love-letter, .login-container {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-.album img, .album video {
-    width: 100%;
-    max-width: 500px;
-    margin: 10px 0;
-    border-radius: 10px;
+#loginPage {
+    text-align: center;
 }
 
 .keypad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    margin-top: 20px;
 }
 
-.keypad button {
-    font-size: 20px;
-    padding: 15px;
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.key {
+    background-color: #ff6f61;
     border: none;
-    background: #444;
     color: white;
-    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+    margin: 5px;
     cursor: pointer;
+    width: 60px;
 }
 
-.keypad button:hover {
-    background: #666;
+#passwordDisplay {
+    margin-top: 10px;
+    font-size: 24px;
 }
+
+#contentPage {
+    text-align: center;
+}
+
+#countdown {
+    margin-bottom: 20px;
+}
+
+#album img {
+    width: 300px;
+    margin: 10px;
+}
+
+#album video {
+    width: 300px;
+    margin: 10px;
+}
+
+#loveLetter {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: left;
+    padding: 20px;
