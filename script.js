@@ -1,47 +1,45 @@
-// Password Logic
-const correctPassword = "1972024";
+document.addEventListener("DOMContentLoaded", () => {
+    showPage("loginPage");
+    updateCountdown();
+});
 
-function addDigit(digit) {
-    document.getElementById("passwordInput").value += digit;
+function showPage(pageId) {
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+    document.getElementById(pageId).classList.add("active");
 }
 
-function clearInput() {
+// Keypad functionality
+let enteredPassword = "";
+const correctPassword = "22022009";
+
+function addNumber(num) {
+    enteredPassword += num;
+    document.getElementById("passwordInput").value = enteredPassword;
+}
+
+function clearPassword() {
+    enteredPassword = "";
     document.getElementById("passwordInput").value = "";
 }
 
 function checkPassword() {
-    const enteredPassword = document.getElementById("passwordInput").value;
     if (enteredPassword === correctPassword) {
         showPage("countdownPage");
     } else {
-        alert("Incorrect password, try again!");
-        clearInput();
+        alert("Wrong Password!");
+        clearPassword();
     }
 }
 
 // Countdown Timer
 function updateCountdown() {
-    const startDate = new Date("2024-07-19T22:50:00");
-    const now = new Date();
-    const diff = now - startDate;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("countdown").innerText = `${days} days since we started our love.`;
+    const startDate = new Date("July 19, 2024 22:50:00").getTime();
+    setInterval(() => {
+        const now = new Date().getTime();
+        const elapsed = now - startDate;
+        const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown").innerText = `${days} days since that moment`;
+    }, 1000);
 }
-
-// Show Page Function
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.add("hidden");
-    });
-    document.getElementById(pageId).classList.remove("hidden");
-
-    // Update countdown only when showing countdown page
-    if (pageId === "countdownPage") {
-        updateCountdown();
-    }
-}
-
-// Start with the login page
-document.addEventListener("DOMContentLoaded", () => {
-    showPage("loginPage");
-});
