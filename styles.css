@@ -1,11 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #ffc0cb; /* Light pink */
-}
-
-h2 {
-    color: #fff;
+    background: #fce4ec;
 }
 
 .page {
@@ -18,40 +14,27 @@ h2 {
 }
 
 .login-container {
-    margin-top: 20%;
+    margin-top: 50px;
 }
 
 .keypad {
     display: inline-block;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
 }
 
 .keys {
     display: grid;
-    grid-template-columns: repeat(3, 50px);
-    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .keys button {
     width: 50px;
     height: 50px;
-    font-size: 20px;
-}
-
-.countdown-container, .album-container, .letter-container {
-    background-color: #800080;
-    padding: 20px;
-    color: white;
+    font-size: 18px;
 }
 
 .gallery img, .gallery video {
     width: 100px;
     height: 100px;
     margin: 5px;
-}
-
-.hidden {
-    display: none;
 }
