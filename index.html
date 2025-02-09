@@ -3,71 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Love Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Love Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Login Page -->
-    <div id="login-page">
-        <h2>Enter the Password</h2>
-        <div id="keypad">
-            <button onclick="addNumber(1)">1</button>
-            <button onclick="addNumber(2)">2</button>
-            <button onclick="addNumber(3)">3</button>
-            <button onclick="addNumber(4)">4</button>
-            <button onclick="addNumber(5)">5</button>
-            <button onclick="addNumber(6)">6</button>
-            <button onclick="addNumber(7)">7</button>
-            <button onclick="addNumber(8)">8</button>
-            <button onclick="addNumber(9)">9</button>
-            <button onclick="clearPassword()">C</button>
-            <button onclick="addNumber(0)">0</button>
-            <button onclick="checkPassword()">✔</button>
-        </div>
-        <input type="password" id="passwordInput" readonly>
-    </div>
-
-    <!-- Main Content (Hidden until correct password is entered) -->
-    <div id="main-content" class="hidden">
-
-        <!-- Countdown Page -->
-        <div id="countdown-page">
-            <h1>Time Since Our Love Started</h1>
-            <p id="timer"></p>
-            <button onclick="nextPage('album-page')">Next</button>
-        </div>
-
-        <!-- Album Page -->
-        <div id="album-page" class="hidden">
-            <h1>Our Memories</h1>
-            <div class="gallery">
-                <img src="20250130_211148.jpg" alt="Photo 1">
-                <img src="GridArt_20250130_205329683.jpg" alt="Photo 2">
-                <img src="GridArt_20250130_212010513.jpg" alt="Photo 3">
-                <video controls>
-                    <source src="video1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <video controls>
-                    <source src="video2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+    <!-- LOGIN PAGE -->
+    <div id="loginPage" class="page">
+        <h2>Enter Password</h2>
+        <div class="keypad">
+            <input type="password" id="passwordInput" readonly>
+            <div class="keys">
+                <button onclick="addDigit('1')">1</button>
+                <button onclick="addDigit('2')">2</button>
+                <button onclick="addDigit('3')">3</button>
+                <button onclick="addDigit('4')">4</button>
+                <button onclick="addDigit('5')">5</button>
+                <button onclick="addDigit('6')">6</button>
+                <button onclick="addDigit('7')">7</button>
+                <button onclick="addDigit('8')">8</button>
+                <button onclick="addDigit('9')">9</button>
+                <button onclick="clearInput()">C</button>
+                <button onclick="addDigit('0')">0</button>
+                <button onclick="checkPassword()">OK</button>
             </div>
-            <button onclick="nextPage('letter-page')">Next</button>
         </div>
-
-        <!-- Full Letter Page -->
-        <div id="letter-page" class="hidden">
-            <h1>To My Princess</h1>
-            <p>
-                Saddonti, I Love You, Today is a special day...  
-                [FULL LETTER CONTENT EXACTLY AS YOU WROTE IT]  
-            </p>
-        </div>
-
     </div>
 
-    <script src="script.js"></script>
+    <!-- COUNTDOWN PAGE -->
+    <div id="countdownPage" class="page hidden">
+        <h2>Time Since Our Love Started</h2>
+        <p id="countdown"></p>
+        <button onclick="showPage('albumPage')">Next</button>
+    </div>
+
+    <!-- ALBUM PAGE -->
+    <div id="albumPage" class="page hidden">
+        <h2>Our Memories</h2>
+        <div class="gallery">
+            <img src="images/20250130_211148.jpg" alt="Memory 1">
+            <img src="images/GridArt_20250130_205329683.jpg" alt="Memory 2">
+            <img src="images/GridArt_20250130_212010513.jpg" alt="Memory 3">
+            <video controls>
+                <source src="videos/video1.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="videos/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <button onclick="showPage('letterPage')">Next</button>
+    </div>
+
+    <!-- LETTER PAGE -->
+    <div id="letterPage" class="page hidden">
+        <h2>To My Princess</h2>
+        <p>
+            Saddonti, I Love You... [YOUR FULL LETTER GOES HERE]
+        </p>
+    </div>
 </body>
 </html>
