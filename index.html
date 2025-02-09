@@ -3,63 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>My Love Story</title>
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
-    <!-- LOGIN PAGE -->
-    <div id="loginPage" class="page">
-        <h2>Enter Password</h2>
-        <div class="keypad">
-            <input type="password" id="passwordInput" readonly>
-            <div class="keys">
-                <button onclick="addDigit('1')">1</button>
-                <button onclick="addDigit('2')">2</button>
-                <button onclick="addDigit('3')">3</button>
-                <button onclick="addDigit('4')">4</button>
-                <button onclick="addDigit('5')">5</button>
-                <button onclick="addDigit('6')">6</button>
-                <button onclick="addDigit('7')">7</button>
-                <button onclick="addDigit('8')">8</button>
-                <button onclick="addDigit('9')">9</button>
-                <button onclick="clearInput()">C</button>
-                <button onclick="addDigit('0')">0</button>
-                <button onclick="checkPassword()">OK</button>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="login-container">
+            <h2>Enter Password</h2>
+            <div class="keypad">
+                <input type="password" id="passwordInput" readonly>
+                <div class="keys">
+                    <button onclick="addNumber(1)">1</button>
+                    <button onclick="addNumber(2)">2</button>
+                    <button onclick="addNumber(3)">3</button>
+                    <button onclick="addNumber(4)">4</button>
+                    <button onclick="addNumber(5)">5</button>
+                    <button onclick="addNumber(6)">6</button>
+                    <button onclick="addNumber(7)">7</button>
+                    <button onclick="addNumber(8)">8</button>
+                    <button onclick="addNumber(9)">9</button>
+                    <button onclick="clearPassword()">C</button>
+                    <button onclick="addNumber(0)">0</button>
+                    <button onclick="checkPassword()">OK</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- COUNTDOWN PAGE -->
-    <div id="countdownPage" class="page hidden">
-        <h2>Time Since Our Love Started</h2>
+    <!-- Countdown Page -->
+    <div id="countdownPage" class="page">
+        <h2>Time Since 19/7/2024 10:50 PM</h2>
         <p id="countdown"></p>
         <button onclick="showPage('albumPage')">Next</button>
     </div>
 
-    <!-- ALBUM PAGE -->
-    <div id="albumPage" class="page hidden">
-        <h2>Our Memories</h2>
+    <!-- Album Page -->
+    <div id="albumPage" class="page">
+        <h2>Photo & Video Album</h2>
         <div class="gallery">
-            <img src="images/20250130_211148.jpg" alt="Memory 1">
-            <img src="images/GridArt_20250130_205329683.jpg" alt="Memory 2">
-            <img src="images/GridArt_20250130_212010513.jpg" alt="Memory 3">
-            <video controls>
-                <source src="videos/video1.mp4" type="video/mp4">
-            </video>
-            <video controls>
-                <source src="videos/video2.mp4" type="video/mp4">
-            </video>
+            <img src="images/20250130_211148.jpg" alt="Photo 1">
+            <img src="images/GridArt_20250130_205329683.jpg" alt="Photo 2">
+            <img src="images/GridArt_20250130_212010513.jpg" alt="Photo 3">
+            <video src="videos/video1.mp4" controls></video>
+            <video src="videos/video2.mp4" controls></video>
         </div>
         <button onclick="showPage('letterPage')">Next</button>
     </div>
 
-    <!-- LETTER PAGE -->
-    <div id="letterPage" class="page hidden">
+    <!-- Full Letter Page -->
+    <div id="letterPage" class="page">
         <h2>To My Princess</h2>
         <p>
-            Saddonti, I Love You... [YOUR FULL LETTER GOES HERE]
+            Saddonti, I Love You... (FULL LETTER HERE)
         </p>
     </div>
+
+    <script src="script.js?v=2"></script>
 </body>
 </html>
