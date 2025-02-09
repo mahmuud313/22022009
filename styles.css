@@ -1,75 +1,57 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    background-color: #ffc0cb; /* Light pink */
 }
 
-/* Login Page */
-#login-page {
-    background: red;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+h2 {
+    color: #fff;
 }
 
-#keypad {
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+.login-container {
+    margin-top: 20%;
+}
+
+.keypad {
+    display: inline-block;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.keys {
     display: grid;
-    grid-template-columns: repeat(3, 60px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 50px);
+    gap: 5px;
 }
 
-#keypad button {
-    width: 60px;
-    height: 60px;
+.keys button {
+    width: 50px;
+    height: 50px;
     font-size: 20px;
 }
 
-#passwordInput {
-    margin-top: 10px;
-    font-size: 24px;
-    text-align: center;
-    width: 180px;
-}
-
-/* Hidden Content */
-.hidden {
-    display: none;
-}
-
-/* Countdown Page */
-#countdown-page {
-    background: pink;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Album Page */
-#album-page {
-    background: purple;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.countdown-container, .album-container, .letter-container {
+    background-color: #800080;
+    padding: 20px;
+    color: white;
 }
 
 .gallery img, .gallery video {
-    width: 200px;
-    margin: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
 }
 
-/* Letter Page */
-#letter-page {
-    background: purple;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.hidden {
+    display: none;
 }
